@@ -1,0 +1,6 @@
+---
+- name: Restart Caddy
+  docker_container:
+    name: "{{ caddy_container_name }}"
+    state: "{{ caddy_container_restart_handler_state }}"
+    restart: yes

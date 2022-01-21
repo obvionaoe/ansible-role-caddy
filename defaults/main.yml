@@ -1,0 +1,35 @@
+---
+caddy_host_user: caddy
+caddy_host_group: caddy
+
+caddy_host_dir: /caddy
+caddy_host_data_dir: "{{ caddy_host_dir }}/data"
+
+caddy_image_tag: '2.4'
+caddy_image_name: 'lucaslorentz/caddy-docker-proxy'
+caddy_image: "{{ caddy_image_name }}:{{ caddy_image_tag }}"
+
+caddy_container_name: caddy
+
+caddy_container_state: started
+caddy_container_restart_handler_state: restarted
+caddy_container_restart_policy: unless-stopped
+caddy_container_restart_retries: 5
+
+caddy_container_volumes:
+  - /var/run/docker.sock:/var/run/docker.sock:ro
+  - "{{ caddy_host_data_dir }}:/data"
+
+caddy_container_ports:
+  - 80:80
+  - 443:443
+
+caddy_create_networks: true
+caddy_container_networks:
+  - name: caddy
+
+caddy_container_labels: {}
+
+caddy_container_env_vars:
+  TZ: Europe/Lisbon
+  CADDY_INGRESS_NETWORKS: '"{{ caddy_container_networks[0].name }}"'
