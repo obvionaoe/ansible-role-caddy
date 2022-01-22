@@ -1,7 +1,8 @@
+---
 galaxy_info:
   role_name: caddy
   author: obvionaoe
-  description: Sets up a Caddy Server running in Docker with the Caddy Docker Proxy plugin installed.
+  description: Caddy in Docker with the Caddy Docker Proxy plugin.
 
   license: license (MIT)
 
