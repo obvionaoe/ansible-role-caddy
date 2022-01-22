@@ -5,9 +5,8 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: ghcr.io/mrsuicideparrot/molecule-docker:latest
-    commands:
-      - molecule test`
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
