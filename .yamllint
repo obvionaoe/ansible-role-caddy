@@ -7,5 +7,5 @@ rules:
     level: warning
 
 ignore: |
+  .github/FUNDING.yml
   .github/stale.yml
-  .travis.yml
