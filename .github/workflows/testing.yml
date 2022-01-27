@@ -31,7 +31,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip3 install yamllint ansible-lint
+        run: pip3 install ansible yamllint ansible-lint
 
       - name: Lint code.
         run: |
@@ -39,6 +39,7 @@ jobs:
           ansible-lint
 
   molecule:
+    name: Molecule
     runs-on: ubuntu-latest
     # strategy:
     #   fail-fast: false
@@ -49,7 +50,7 @@ jobs:
         with:
           path: 'obvionaoe.caddy'
 
-      - name: Molecule
+      - name: Test
         uses: gofrolist/molecule-action@v2
         with:
           molecule_command: test
