@@ -5,6 +5,7 @@
     owner: "{{ caddy_host_user }}"
     group: "{{ caddy_host_group }}"
     state: directory
+    mode: 0744
   loop:
     - "{{ caddy_host_dir }}"
     - "{{ caddy_host_data_dir }}"

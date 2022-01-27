@@ -5,11 +5,6 @@ dependency:
 driver:
   name: docker
 
-lint: |
-  set -e
-  yamllint .
-  ansible-lint
-
 platforms:
   - name: instance
     image: "ghcr.io/mrsuicideparrot/molecule-docker:latest"

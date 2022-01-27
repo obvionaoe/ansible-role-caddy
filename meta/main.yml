@@ -16,10 +16,8 @@ galaxy_info:
   galaxy_tags:
     - caddy
     - docker
-    - docker-proxy
     - container
     - server
     - web
-    - web-server
 
   dependencies: []
