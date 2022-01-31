@@ -12,7 +12,7 @@ caddy_image: "{{ caddy_image_name }}:{{ caddy_image_tag }}"
 caddy_container_name: caddy
 
 caddy_container_state: started
-caddy_container_restart_handler_state: restarted
+caddy_container_restart_handler_state: started
 caddy_container_restart_policy: unless-stopped
 caddy_container_restart_retries: 5
 
