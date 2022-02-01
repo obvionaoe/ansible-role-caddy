@@ -3,7 +3,7 @@
   hosts: all
   become: true
   gather_facts: false
-  tasks:
+  pre_tasks:
     - name: Update apt cache (on Debian).
       apt:
         update_cache: true

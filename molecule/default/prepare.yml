@@ -1,0 +1,6 @@
+---
+- name: Prepare
+  hosts: all
+  become: true
+  roles:
+    - geerlingguy.docker

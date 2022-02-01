@@ -6,16 +6,9 @@ driver:
   name: docker
 
 platforms:
-  - name: instance
-    image: "ghcr.io/mrsuicideparrot/molecule-docker:latest"
-    command: "molecule test"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    privileged: true
+  - name: ubuntu2004
+    image: geerlingguy/docker-ubuntu2004-ansible
     pre_build_image: true
-
+       
 provisioner:
-  name: ansible
-
-verifier:
   name: ansible
