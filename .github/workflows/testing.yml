@@ -31,7 +31,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip3 install ansible yamllint ansible-lint
+        run: |
+          pip3 install ansible yamllint ansible-lint
+          ansible-galaxy role install geerlingguy.docker
 
       - name: Lint code.
         run: |
