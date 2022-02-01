@@ -1,9 +1,8 @@
 ---
 - name: Verify
-  hosts: all
-
+  hosts: localhost
   tasks:
-  - name: Verify Caddy is serving web requests.
-    uri:
-      url: http://localhost:80
-      status_code: 200
+    - name: Verify Caddy is serving web requests.
+      uri:
+        url: http://localhost:80
+        status_code: 200
