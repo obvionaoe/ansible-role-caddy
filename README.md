@@ -1,6 +1,7 @@
 # Ansible Role: Caddy
 
 <!-- [![CI](https://github.com/obvionaoe/ansible-role-caddy/workflows/CI/badge.svg?event=push)](https://github.com/obvionaoe/ansible-role-caddy/actions?query=workflow%3ACI) -->
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
 An Ansible role to set up a [Caddy](https://caddyserver.com/) server running in Docker with the [Docker Proxy](https://github.com/lucaslorentz/caddy-docker-proxy) plugin installed.
 
