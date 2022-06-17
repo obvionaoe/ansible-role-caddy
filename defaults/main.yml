@@ -5,7 +5,7 @@ caddy_host_group: caddy
 caddy_host_dir: /caddy
 caddy_host_data_dir: "{{ caddy_host_dir }}/data"
 
-caddy_image_tag: '2.4'
+caddy_image_tag: '2.7.1'
 caddy_image_name: 'lucaslorentz/caddy-docker-proxy'
 caddy_image: "{{ caddy_image_name }}:{{ caddy_image_tag }}"
 
