@@ -6,12 +6,18 @@ galaxy_info:
 
   license: license (MIT)
 
-  min_ansible_version: 2.4
+  min_ansible_version: "2.4"
 
   platforms:
     - name: Ubuntu
       versions:
         - focal
+        - jammy
+
+    - name: Debian
+      versions:
+        - bullseye
+        - bookworm
 
   galaxy_tags:
     - caddy
@@ -20,4 +26,4 @@ galaxy_info:
     - server
     - web
 
-  dependencies: []
+dependencies: []

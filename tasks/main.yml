@@ -1,32 +1,32 @@
 ---
 - name: Create Caddy directories
-  file:
+  ansible.builtin.file:
     path: "{{ item }}"
     owner: "{{ caddy_host_user }}"
     group: "{{ caddy_host_group }}"
     state: directory
-    mode: 0744
+    mode: "0744"
   loop:
     - "{{ caddy_host_dir }}"
     - "{{ caddy_host_data_dir }}"
 
 - name: Create Docker networks
-  docker_network:
+  community.docker.docker_network:
     name: "{{ item.name }}"
   loop: "{{ caddy_container_networks }}"
   when: caddy_create_networks | bool
 
 - name: Start Caddy Docker Proxy
-  docker_container:
+  community.docker.docker_container:
     name: "{{ caddy_container_name }}"
     image: "{{ caddy_image }}"
     restart_policy: "{{ caddy_container_restart_policy }}"
     volumes: "{{ caddy_container_volumes }}"
-    env: "{{ caddy_container_env_vars }}"
+    env: "{{ __caddy_preset_env_vars | ansible.builtin.combine(caddy_container_env_vars) }}"
     published_ports: "{{ caddy_container_ports }}"
     networks: "{{ caddy_container_networks }}"
     labels: "{{ caddy_container_labels }}"
     detach: true
-    state: "{{ caddy_container_state }}"
+    state: started
   notify:
     - Restart Caddy
