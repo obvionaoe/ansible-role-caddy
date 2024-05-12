@@ -1,6 +1,0 @@
----
-- name: Prepare
-  hosts: localhost
-  become: true
-  roles:
-    - geerlingguy.docker
